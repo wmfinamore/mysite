@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 
 class PublishedManager(models.Manager):
@@ -33,6 +34,7 @@ class Post(models.Model):
                               help_text='status of a blog')
     objects = models.Manager()#The default manager
     published = PublishedManager()#Our custom manager
+    tags = TaggableManager()
 
     class Meta:
         """sort results by the publish field in descending order by default"""
