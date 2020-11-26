@@ -3,6 +3,7 @@ from .views import post_detail
 # from .views import PostListView
 from .views import post_list
 from .views import post_share
+from .feeds import LatestPostFeed
 
 
 app_name = 'blog'
@@ -15,4 +16,5 @@ urlpatterns = [
          name='post_detail'),
     path('<int:post_id>/share/', post_share, name='post_share'),
     path('tag/<slug:tag_slug>/', post_list, name='post_list_by_tag'),
+    path('feed/', LatestPostFeed(), name='post_feed'),
 ]
