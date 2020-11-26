@@ -1,0 +1,22 @@
+start the docker desktop
+
+open windows prompt
+
+execute:
+    docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+
+to view the container status
+    docker ps
+
+for stop the container
+    docker stop some-postgres
+
+for delete the container
+    docker rm some-postgres
+
+to access the bash inside the container
+    docker exec -it some-postgres bash
+
+if you need use the psql
+    su postgres
+    psql
